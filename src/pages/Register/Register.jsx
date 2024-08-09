@@ -24,13 +24,14 @@ const Register = () => {
     };
 
     if (password !== confirmPassword) {
-      setError("As senhas precisam set iguais!");
+      setError("As senhas precisam ser iguais!");
       return;
     }
 
     const res = await createUser(user);
 
     console.log(res);
+    console.log(user);
   };
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Register = () => {
   }, [authError]);
 
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Cadastre-se para postar</h1>
       <p>Crie seu usuário e compartilhe suas historias</p>
       <form onSubmit={handleSubmit}>
@@ -88,7 +89,13 @@ const Register = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
-        <button className="btn">Cadastrar</button>
+        {!loading && <button className="btn">Cadastrar</button>}
+        {loading && (
+          <button className="btn" disabled>
+            Aguarde
+          </button>
+        )}
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

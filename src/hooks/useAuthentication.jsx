@@ -29,7 +29,7 @@ export const useAtuthentication = () => {
     checkIfIsCancelled();
 
     setLoading(true);
-    setError("");
+    setError(null);
 
     try {
       const { user } = createUserWithEmailAndPassword(
@@ -56,6 +56,8 @@ export const useAtuthentication = () => {
       } else {
         systemErrorMessage = "Ocorreu erro, por favor tente mais tare...";
       }
+
+      setError(systemErrorMessage);
     }
 
     setLoading(false);
