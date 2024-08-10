@@ -1,6 +1,6 @@
-import { useAtuthentication } from "../../hooks/useAuthentication";
 import styles from "./Register.module.css";
 
+import { useAtuthentication } from "../../hooks/useAuthentication";
 import { useState, useEffect } from "react";
 
 const Register = () => {
