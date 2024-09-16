@@ -1,0 +1,12 @@
+.create_post {
+  text-align: center;
+}
+
+.create_post_ h2 {
+  font-size: 2.2em;
+}
+
+.create_post_ p {
+  color: #aaa;
+  margin-bottom: 2em;
+}
